@@ -1,3 +1,5 @@
+import emailjs from "@emailjs/browser";
+
 $(document).ready(function () {
 
     $('#menu').click(function () {
@@ -39,21 +41,22 @@ $(document).ready(function () {
 
     // <!-- emailjs to mail contact form data -->
   // Initialize EmailJS once
-emailjs.init({
-    publicKey: "wwYi3GzPgXMYD71gR"  // replace with your actual Public Key
-});
+// emailjs.init({
+//     publicKey: "wwYi3GzPgXMYD71gR"  // replace with your actual Public Key
+// });
 
 // Handle form submit
 // Initialize EmailJS with your Public Key
+// Initialize EmailJS ONCE at the top
 emailjs.init({
-    publicKey: "AUckfPmspHckDcwnf" // replace with your actual public key
+    publicKey: "oC_HFdcP89bN05slp"
 });
 
 // Handle form submit
 $("#contact-form").submit(function (event) {
     event.preventDefault();
-
-    emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
+    
+    emailjs.sendForm('service_0xank26', 'template_qjv33uu', '#contact-form')
         .then(function (response) {
             console.log('SUCCESS!', response.status, response.text);
             $("#contact-form")[0].reset();
@@ -63,6 +66,8 @@ $("#contact-form").submit(function (event) {
             alert("❌ Form Submission Failed! Check console for details.");
         });
 });
+
+
 
 });
 document.addEventListener('visibilitychange',
